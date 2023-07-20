@@ -4,15 +4,25 @@ function NewDomainEventId(): string {
   return uuid();
 }
 
-interface DomainEvent {
-  AggregateId(): number;
-  AggregateName(): string;
-  EventId(): number;
-  EventName(): string;
-  EventBody(): any;
-  EventBodyRaw(): ArrayBuffer;
-  EventCreateTime(): Date;
-  initEventId(): void;
+class DomainEvent {
+  aggregateId: string;
+  aggregateName: string;
+  eventId: string;
+  eventName: string;
+  eventData: {};
+
+  constructor(
+    aggregateId: string,
+    aggregateName: string,
+    eventName: string,
+    eventData: {}
+  ) {
+    this.aggregateId = aggregateId;
+    this.aggregateName = aggregateName;
+    this.eventId = NewDomainEventId();
+    this.eventName = eventName;
+    this.eventData = eventData;
+  }
 }
 
 export { DomainEvent };

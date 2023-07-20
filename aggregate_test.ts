@@ -1,4 +1,4 @@
-import { Aggregate, AbstractAggregate } from "./aggregate";
+import { AbstractAggregate } from "./aggregate";
 
 type GenderType = "Male" | "Female" | "Unknow";
 class UserAggregate extends AbstractAggregate {
