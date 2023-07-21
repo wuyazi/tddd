@@ -10,6 +10,7 @@ class DomainEvent {
   eventId: string;
   eventName: string;
   eventData: {};
+  eventTime: Date;
 
   constructor(
     aggregateId: string,
@@ -22,6 +23,7 @@ class DomainEvent {
     this.eventId = NewDomainEventId();
     this.eventName = eventName;
     this.eventData = eventData;
+    this.eventTime = new Date();
   }
 }
 

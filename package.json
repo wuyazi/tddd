@@ -10,9 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "async-mutex": "^0.4.0",
+    "mysql": "^2.18.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@mysql/xdevapi": "^8.0.33",
+    "@types/mysql": "^2.15.21",
     "@types/uuid": "^9.0.2"
   }
 }
