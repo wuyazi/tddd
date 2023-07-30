@@ -15,12 +15,14 @@ class DomainEvent {
   constructor(
     aggregateId: string,
     aggregateName: string,
+    eventId: string,
     eventName: string,
     eventData: {}
   ) {
     this.aggregateId = aggregateId;
     this.aggregateName = aggregateName;
     this.eventId = NewDomainEventId();
+    this.eventId = eventId;
     this.eventName = eventName;
     this.eventData = eventData;
     this.eventTime = new Date();

@@ -30,13 +30,14 @@ abstract class AbstractAggregate {
     const domainEvent = new DomainEvent(
       this.Id,
       this.constructor.name,
+      NewAggregateId(),
       eventName,
       aggregateChange
     );
-    // err := handleAppliedDomainEvent(agg, &domainEvent)
-    // if err != nil {
-    //     throw new Error("aggregate apply failed, apply domain event failed");
-    // }
+    let err = handleAppliedDomainEvent(agg, domainEvent);
+    if (err != null) {
+      throw new Error("aggregate apply failed, apply domain event failed");
+    }
     this.domainEvents.push(domainEvent);
     return;
   }
